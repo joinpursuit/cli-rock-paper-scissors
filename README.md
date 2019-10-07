@@ -25,7 +25,7 @@ For this assignment, you will build a [Rock, Paper, Scissors](https://en.wikiped
 
 * Use the [`readline-sync`](https://www.npmjs.com/package/readline-sync) module to receive input from the user.
 * A sample of how to use `readline-sync` is in the file [`sample.js`](./sample.js) in this repo. Check it out.
-* The `readline-sync` module has already been installed and its inside the `node_modules` folder. The only thing you need to do with it is learn how to use it. Read the docs.
+* The `readline-sync` module has already been installed and its inside the `node_modules` folder. The only thing you need to do with it is learn how to use it. Read the [docs](https://www.npmjs.com/package/readline-sync).
 
 ## Demo
 ![command line rock paper scissors game](/assets/rps-cli.gif)
