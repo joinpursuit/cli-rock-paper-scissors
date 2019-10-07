@@ -21,6 +21,12 @@ For this assignment, you will build a [Rock, Paper, Scissors](https://en.wikiped
 5. Handle user entering 'r' or 'R' as `Rock`. Same for the rest.
 6. If user enters a letter that is none of `r`, `R`, `s`, `S`, `p` or `P`. Display a message `Invalid choice` and quit the game.
 
+## Notes
+
+* Use the [`readline-sync`](https://www.npmjs.com/package/readline-sync) module to receive input from the user.
+* A sample of how to use `readline-sync` is in the file [`sample.js`](./sample.js) in this repo. Check it out.
+* The `readline-sync` module has already been installed and its inside the `node_modules` folder. The only thing you need to do with it is learn how to use it. Read the docs.
+
 ## Demo
 ![command line rock paper scissors game](/assets/rps-cli.gif)
 
