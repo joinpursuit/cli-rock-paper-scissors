@@ -22,3 +22,5 @@ For this assignment, you will build a [Rock, Paper, Scissors](https://en.wikiped
 5. Handle user entering 'r' or 'R' as `Rock`. Same for the rest.
 6. If user enters a letter that is none of `r`, `R`, `s`, `S`, `p` or `P`. Display a message `Invalid choice` and quit the game.
 
+## Demo
+![command line rock paper scissors game](/assets/rps-cli.gif)
