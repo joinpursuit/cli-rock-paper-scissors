@@ -1,5 +1,8 @@
 ## Command Line Rock Paper Scissors.
 
+For this assignment, you will build a [Rock, Paper, Scissors](https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors) game in the terminal.
+
+![rock-paper-scissors](https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rock-paper-scissors.svg/800px-Rock-paper-scissors.svg.png)
 
 ## Instructions for lab submission
 
@@ -8,10 +11,6 @@
 2. Complete the lab
 3. Push your changes to your Fork
 4. Notify instructors by Slack or email once you're done.
-
-For this assignment, you will build a [Rock, Paper, Scissors](https://en.wikipedia.org/wiki/Rock%E2%80%93paper%E2%80%93scissors) game in the terminal.
-
-![rock-paper-scissors](https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Rock-paper-scissors.svg/800px-Rock-paper-scissors.svg.png)
 
 ## Requirements
 
