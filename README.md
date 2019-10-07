@@ -24,3 +24,6 @@ For this assignment, you will build a [Rock, Paper, Scissors](https://en.wikiped
 
 ## Demo
 ![command line rock paper scissors game](/assets/rps-cli.gif)
+
+## Rubric
+![command line rock paper scissors game grading rubric](/assets/rps-cli-rubric.png)
