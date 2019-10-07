@@ -17,7 +17,7 @@ For this assignment, you will build a [Rock, Paper, Scissors](https://en.wikiped
 1. The user must be able to play against the computer
 2. The user must be given the option to pick from rock, paper or scissors
 3. The computer must chose randomly between rock, paper, scissors.
-4. The computer should tell the user if she wins or if she losses.
+4. Once both the computer and the user have chosen, the game should tell who won.
 5. Handle user entering 'r' or 'R' as `Rock`. Same for the rest.
 6. If user enters a letter that is none of `r`, `R`, `s`, `S`, `p` or `P`. Display a message `Invalid choice` and quit the game.
 
