@@ -31,4 +31,4 @@ For this assignment, you will build a [Rock, Paper, Scissors](https://en.wikiped
 ![command line rock paper scissors game](/assets/rps-cli.gif)
 
 ## Rubric
-![command line rock paper scissors game grading rubric](/assets/rps-cli-rubric.png)
+To find the rubric that will be used to grade your work for this assignment, locate this assignment on you Canvas course.
