@@ -9,12 +9,12 @@ const checkUserInput = (userInput) => {
     }
 }
 
-const randomAnswer = (compAnswerArr) => {
-    let compInput = Math.floor(Math.random() * compAnswerArr.length);
-    return compAnswerArr[compInput]
+const getComputerAnswer = (options) => {
+    let compInput = Math.floor(Math.random() * options.length);
+    return options[compInput]
 }
 
-const winnerGameStandard = (answ1, answ2) => {
+const evaluateWinner = (answ1, answ2) => {
     let userInput = answ1;
     let compInput = answ2;
     let result = ""
@@ -39,7 +39,7 @@ const askQuestion = () => {
 
 
 let options = ["r", "s", "p"]
-let compAnswer = randomAnswer(options)
+let compAnswer = getComputerAnswer(options)
 let isInvalid = true;
 
 console.log("Welcome to Rock, Paper, Scissors! Let's play!");
@@ -49,7 +49,7 @@ while (isInvalid) { // meaning  the user input is valid.
         console.log(`Your input ${userInput} is an invalid choice, please try again!`);
     } else {
         isInvalid = false
-        winnerGameStandard(userInput, compAnswer);
+        evaluateWinner(userInput, compAnswer);
     }
 }
 
