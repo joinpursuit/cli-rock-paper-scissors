@@ -7,7 +7,6 @@
 
 // Need use:
 //     -Math.floor(Math.random() max - min)
-
 //     --
 // const readlineSync = require('readline-sync');
 // let answer = readlineSync.question('what do you need rock, paper or scissors?')
@@ -44,14 +43,23 @@
 // for answers that does not read rR, sS, and pP.
 
 
+const readlineSync = require('readline-sync');
+
 let options = ["r", "s", "p"]
 
 console.log("Welcome to Rock, Paper, Scissors! Let's play!");
-const readlineSync = require('readline-sync');
 let userInput = readlineSync.question("Pick one [R]ock, [P]aper or [S]cissors?: ")
+
+const checkUserInput = (userInput) => {
+    userInput = userInput.toLowerCase()
+    if (!options.includes(userInput)) {
+        return null;
+    } else {
+        return userInput
+    }
+}
+userInput = checkUserInput(userInput);
 console.log(`user:${userInput}`)
-
-
 
 const randomAnswer = (compAnswerArr) => {
     let compInput = Math.floor(Math.random() * compAnswerArr.length);
@@ -59,34 +67,24 @@ const randomAnswer = (compAnswerArr) => {
     return compAnswerArr[compInput]
 }
 
-
-
 const winnerGameStandard = (answ1, answ2) => {
     let userInput = answ1;
     let compInput = answ2;
     let result = null;
 
-    if (userInput === compInput) {
-        result = "tie" // the most basic case must go first
+    if (userInput === null) {
+        result = "Invalid choice"
+    } else if (userInput === compInput) {
+        result = "Tie!" // the most basic case must go first
     } else if (userInput === "r" && compInput === "s") {
-        result = "win"
+        result = "Win!"
     } else if (userInput === "p" && compInput === "r") {
-        userInput = "win"
+        userInput = "Win!"
     } else if (userInput === "s" && compInput === "p") {
-        result = "win"
+        result = "Win!"
     } else {
-        result = "You have lost"
+        result = "You have lost!"
     }
     console.log(result);
 }
 winnerGameStandard(userInput, randomAnswer(options));
-
-
-const checkUserInput = (userInput) => {
-    if (!userInput.includes(options)) {
-        console.log("Invalid choice")
-    } else {
-        return userInput
-    }
-    console.log(checkUserInput(userInput));
-}
