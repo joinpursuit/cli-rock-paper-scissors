@@ -1,90 +1,85 @@
-//Brainstorming:
-// 1.I need to create a game that plays with the computer.
-// 2. It needs to read both low and uppercase.
-// 3. It needs to be randomize with the computer answer reads / understand each value.
-// 4. if its not one of the values, return invalid
-// 5.. Must provide three response tie, win or lost.
-
-// Need use:
-//     -Math.floor(Math.random() max - min)
-//     --
-// const readlineSync = require('readline-sync');
-// let answer = readlineSync.question('what do you need rock, paper or scissors?')
-// console.log('Hi ${answer}')
-
-//     --
-// let str = 'R'
-//     --
-// let input = [r, R, s, S, p, P]
-// let letter = str.toUpperCase();
-// --str.toLowerCase();
-
-
-// what would you do with the input ?
-//     check
-// if
-// its valid or not
-// what happen after verifying users input ?
-//     read
-// if its upperCase or LowerCase sensitive.
-
-// take the input into
-
-// function to compare but before--
-// let computer know what p, s, and r. **
-//     computer input
-
-// ========
-
-// coding JS
-// check
-// if a value exist within an array - how to check ?
-
-// for answers that does not read rR, sS, and pP.
-
-
 const readlineSync = require('readline-sync');
 
-let options = ["r", "s", "p"]
-
-console.log("Welcome to Rock, Paper, Scissors! Let's play!");
-let userInput = readlineSync.question("Pick one [R]ock, [P]aper or [S]cissors?: ")
-
 const checkUserInput = (userInput) => {
-    userInput = userInput.toLowerCase()
+    // userInput = userInput.toLowerCase()
     if (!options.includes(userInput)) {
-        return null;
+        return true
     } else {
-        return userInput
+        return false
     }
 }
-userInput = checkUserInput(userInput);
-console.log(`user:${userInput}`)
 
 const randomAnswer = (compAnswerArr) => {
     let compInput = Math.floor(Math.random() * compAnswerArr.length);
-    console.log(`VS computer:${compAnswerArr[compInput]}`)
     return compAnswerArr[compInput]
 }
 
 const winnerGameStandard = (answ1, answ2) => {
     let userInput = answ1;
     let compInput = answ2;
-    let result = null;
-
-    if (userInput === null) {
-        result = "Invalid choice"
-    } else if (userInput === compInput) {
-        result = "Tie!" // the most basic case must go first
+    let result = ""
+    if (userInput === compInput) {
+        result = "Tie!"
     } else if (userInput === "r" && compInput === "s") {
         result = "Win!"
     } else if (userInput === "p" && compInput === "r") {
-        userInput = "Win!"
+        result = "Win!"
     } else if (userInput === "s" && compInput === "p") {
         result = "Win!"
     } else {
         result = "You have lost!"
     }
+    console.log(`User: ${userInput} vs computer: ${compAnswer}`)
     console.log(result);
 }
-winnerGameStandard(userInput, randomAnswer(options));
+
+const askQuestion = () => {
+    return readlineSync.question("Pick one [R]ock, [P]aper or [S]cissors?: ")
+}
+
+
+let options = ["r", "s", "p"]
+let compAnswer = randomAnswer(options)
+let isInvalid = true;
+
+console.log("Welcome to Rock, Paper, Scissors! Let's play!");
+while (isInvalid) { // meaning  the user input is valid.
+    let userInput = askQuestion().toLowerCase();
+    if (checkUserInput(userInput)) {
+        console.log(`Your input ${userInput} is an invalid choice, please try again!`);
+    } else {
+        isInvalid = false
+        winnerGameStandard(userInput, compAnswer);
+    }
+}
+
+
+
+//============================================================================
+//Brainstorming:
+// 1.I need to create a game that plays with the computer.
+// 2. It needs to read both low and uppercase.
+// 3. It needs to be randomize with the computer answer reads / understand each value.
+// 4. If its not one of the values, return invalid and end game.
+// 5. Must provide three response tie, win or lost.
+
+//Need use:
+//the .include method
+//Math.floor(Math.random() max - min)
+//     --
+// const readlineSync = require('readline-sync');
+// let answer = readlineSync.question('what do you need rock, paper or scissors?')
+// console.log(`${answer}`)
+// --userInput.toLowerCase();
+
+//Questions by JR/Alejo:
+// What would you do with the input ?
+// A:Check that input equals to only r,R,s,S,p,P. It cannot read other letters, numbers and symbols. I must compare user
+// input with the computer random input.
+// What happens after verifying users input?  
+// A: If input its one of the good choice, it needs to check for upperCase/lowerCase sensitive and  compare input with computer.
+// It needs to meet the condition statements.
+// How do you check if a value exist within an array? 
+// if a value exist within an array - how to check ?
+
+//====================================================
