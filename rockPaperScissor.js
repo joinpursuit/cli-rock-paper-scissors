@@ -14,9 +14,8 @@ const getComputerAnswer = (options) => {
     return options[compInput]
 }
 
-const evaluateWinner = (answ1, answ2) => {
-    let userInput = answ1;
-    let compInput = answ2;
+const evaluateWinner = (userInput, compInput) => {
+
     let result = ""
     if (userInput === compInput) {
         result = "Tie!"
@@ -29,7 +28,7 @@ const evaluateWinner = (answ1, answ2) => {
     } else {
         result = "You have lost!"
     }
-    console.log(`User: ${userInput} vs computer: ${compAnswer}`)
+    console.log(`User: ${userInput} vs computer: ${compInput}`)
     console.log(result);
 }
 
