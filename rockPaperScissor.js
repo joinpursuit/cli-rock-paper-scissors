@@ -25,11 +25,11 @@ const evaluateWinner = (userInput, compInput) => {
     if (userInput === compInput) {
         result = "Tie!"
     } else if (userInput === "r" && compInput === "s") {
-        result = "Win!"
+        result = "User wins!"
     } else if (userInput === "p" && compInput === "r") {
-        result = "Win!"
+        result = "User wins!"
     } else if (userInput === "s" && compInput === "p") {
-        result = "Win!"
+        result = "User wins!"
     } else {
         result = "You have lost!"
     }
