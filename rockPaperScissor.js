@@ -1,18 +1,20 @@
-// initializing  the readline sync into the program 
+// Initializing  the readline sync into the program 
 const readlineSync = require('readline-sync');
 
 //First declare options arrays
 const options = ["r", "s", "p"]
 
-//random computer input 
+//randomize computer input 
 const getComputerAnswer = (options) => {
     let compInput = Math.floor(Math.random() * options.length);
     return options[compInput]
 }
 
+
 const askQuestion = () => {
     return readlineSync.question("Pick one [R]ock, [P]aper or [S]cissors?: ")
 }
+
 //checking if userInput input is an acceptable response
 const checkUserInput = (userInput) => {
     return !options.includes(userInput)
@@ -80,5 +82,11 @@ while (isInvalid) { // meaning  the user input is valid.
 // It needs to meet the condition statements.
 // How do you check if a value exist within an array? 
 // if a value exist within an array - how to check ?
+
+/* ===Questions=== 
+--How can I improve my code?
+--What are some suggestions for the if and else statements?/
+--Do you think the switch case would have served me better?
+
 
 //====================================================
