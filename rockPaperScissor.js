@@ -1,19 +1,24 @@
+// initializing  the readline sync into the program 
 const readlineSync = require('readline-sync');
 
-const checkUserInput = (userInput) => {
-    // userInput = userInput.toLowerCase()
-    if (!options.includes(userInput)) {
-        return true
-    } else {
-        return false
-    }
-}
+//First declare options arrays
+const options = ["r", "s", "p"]
 
+//random computer input 
 const getComputerAnswer = (options) => {
     let compInput = Math.floor(Math.random() * options.length);
     return options[compInput]
 }
 
+const askQuestion = () => {
+    return readlineSync.question("Pick one [R]ock, [P]aper or [S]cissors?: ")
+}
+//checking if userInput input is an acceptable response
+const checkUserInput = (userInput) => {
+    return !options.includes(userInput)
+}
+
+// comparing user input with the computer input
 const evaluateWinner = (userInput, compInput) => {
 
     let result = ""
@@ -32,15 +37,10 @@ const evaluateWinner = (userInput, compInput) => {
     console.log(result);
 }
 
-const askQuestion = () => {
-    return readlineSync.question("Pick one [R]ock, [P]aper or [S]cissors?: ")
-}
-
-
-let options = ["r", "s", "p"]
 let compAnswer = getComputerAnswer(options)
 let isInvalid = true;
 
+// the engine of the function 
 console.log("Welcome to Rock, Paper, Scissors! Let's play!");
 while (isInvalid) { // meaning  the user input is valid.
     let userInput = askQuestion().toLowerCase();
