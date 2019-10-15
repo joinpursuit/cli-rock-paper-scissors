@@ -1,11 +1,10 @@
 const readlineSync = require('readline-sync'); 
 let  rps = ["R", "P", "S"]
-function getRandomRps(arr){
+
+const getRandomRps = (arr) =>{
     let random =  arr[Math.floor(Math.random()*arr.length)]
     return random
 }
-// getRandomRps(rps)
-
 
 
 const beginGame = () => {
