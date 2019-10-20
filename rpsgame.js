@@ -18,36 +18,42 @@ const beginGame = () => {
             console.log("Its a tie")
         }else if(answerUC === "R"){
             if(randomRps === "P"){
-                console.log("COMPUTER WINS")
+                console.log("Computer wins this round")
                 computerWin++;
             }else{
-                console.log("USER WINS")
+                console.log("User wins this round")
                 userWin ++;
             }
         }else if(answerUC === "P" ){
             if(randomRps === "S"){
-                console.log("COMPUTER WINS")
-                computerWin ++
-                
+                console.log("Computer wins this round")
+                computerWin ++    
             }else{
-                console.log("USER WINS")
+                console.log("User wins this round")
                 userWin ++
             }
         }else if(answerUC === "S"){
             if(randomRps === "R"){
-                console.log("COMPUTER WINS")
+                console.log("Computer wins this round")
                 computerWin ++
             }else{
-                console.log("USER WINS")
+                console.log("User wins this round")
                 userWin ++
             }
         }else{
             console.log("INVALID CHOICE")
         }
         console.log(`User: ${answer} VS. Computer: ${randomRps}`)
-        console.log(`User wins: ${userWin}`)
-        console.log(`Computer wins: ${computerWin}`)
+        console.log(`User wins: ${userWin}, Computer wins: ${computerWin}`)
+        
+       
 
     } 
+    if(userWin === 3){
+        console.log("Congrats! You Won!")
+    }else if(computerWin === 3){
+        console.log("You Lose!")
+    }
+    
 }
 beginGame()
