@@ -5,15 +5,15 @@ const getRandomRps = (arr) =>{
     return random;
 }
 
+
+
 const beginGame = () => {
     let userWin = 0;
     let computerWin = 0;
-    while(computerWin <4 && userWin <4){
+    while(computerWin <3 && userWin <3){
         let randomRps = getRandomRps(rps)
-        console.log(randomRps)
-        console.log(`user wins: ${userWin}`)
-        console.log(`computer wins: ${computerWin}`)
-        const answerUC = readlineSync.question('Pick one of [R]ock,[P]aper,[S]cissor: ')
+        const answer = readlineSync.question('Welcome to Rock, Paper and Scissors. The first to get 3 points, wins. Let\'s Play!\nPick one of [R]ock,[P]aper,[S]cissor: ')
+        let answerUC = answer.toUpperCase()
         if(answerUC === randomRps) {
             console.log("Its a tie")
         }else if(answerUC === "R"){
@@ -42,8 +42,12 @@ const beginGame = () => {
                 userWin ++
             }
         }else{
-            console.log("Invalid choice")
+            console.log("INVALID CHOICE")
         }
+        console.log(`User: ${answer} VS. Computer: ${randomRps}`)
+        console.log(`User wins: ${userWin}`)
+        console.log(`Computer wins: ${computerWin}`)
+
     } 
 }
 beginGame()
